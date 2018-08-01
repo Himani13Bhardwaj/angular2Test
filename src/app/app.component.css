@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.title {
+    background: #000;
+    color: #fff;
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.addEmp {
+    float: right;
+    background: DodgerBlue;
+    margin: 1em 12px;
+    border: 1px solid #5C7FE4;
+    padding: 10px;
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px #5C7FE4;
+    font-family: cursive;
+    text-transform: uppercase;
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #C5C6C7;
+    color: #fff;
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #888787;
+}
+
+ul li:hover {
+    background-color: RoyalBlue;
+}
+
+ul li i {
+    margin: 0 0.7em;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+ul li i.fa-trash:hover {
+    color: red;
+}
+
+ul li i.fa-edit:hover {
+    color: #000;
+}

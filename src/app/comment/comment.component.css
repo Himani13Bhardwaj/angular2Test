@@ -1,0 +1,19 @@
+.postData {
+    width: 70%;
+    margin: 1em auto;
+    position: relative;
+}
+
+.postData input {
+    width: 40%;
+    height: 25px;
+    padding: 6px;
+}
+
+.postData ul {
+    width: 100px;
+    position: absolute;
+    top: 30px;
+}
+
+.postData ul li {}

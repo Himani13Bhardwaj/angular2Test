@@ -1,0 +1,10 @@
+<div class="postData">
+    <input (keypress)="textAreaKeyHandler($event)" type="text" [(ngModel)]="inputPostInformation">
+    <button class='addEmp' name="Save" (click)="saveInformation(inputPostInformation)">Save</button>
+    <ul *ngIf="showList">
+        <li *ngFor="let emp of employees" (click)='selectedEmp(emp)'><a>{{emp.username}}</a></li>
+    </ul>
+    <ul *ngIf="showPhoneList">
+        <li *ngFor="let emp of employees" (click)='selectedEmp(emp)'><a>{{emp.phone}}</a></li>
+    </ul>
+</div>

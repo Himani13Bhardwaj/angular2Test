@@ -1,0 +1,48 @@
+<div>
+    <button class='addEmp' name="Add new Employee" (click)="addEmployeeInformation()">Add new Employee</button>
+    <button class='addEmp' name="clear storage" (click)="clearEmployeeInformation()">clear storage</button>
+    <div class="clear employeeDiv">
+        <ul *ngIf="message.length>0">
+            <li *ngFor="let msg of message">{{msg}}</li>
+        </ul>
+        <table *ngIf="employees.length>0">
+            <caption>Employee Information</caption>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+            <tr *ngFor="let info of employees;let i=index">
+                <td id="{{i + 1}}">{{i + 1 | number}}</td>
+                <td>
+                    <input type="text" *ngIf="info.edit" class="inputText" [(ngModel)]="row.username" required>
+                    <span *ngIf="(info.username.length> 0) && (!info.edit)" pattern="[\w-_]+">{{info.username}}</span>
+                </td>
+                <td>
+                    <input maxlength="10" type="number" *ngIf="(info.edit)" class="inputText" [(ngModel)]="row.phone" required>
+                    <span *ngIf="(info.phone.toString().length> 0) && (!info.edit)">{{info.phone}}</span>
+                </td>
+                <td>
+                    <input type="text" *ngIf="(info.edit)" class="inputText" [(ngModel)]="row.role" required>
+                    <span *ngIf="(info.role.length> 0) && (!info.edit)">{{info.role}}</span>
+                </td>
+                <td>
+                    <input type="text" *ngIf="(info.edit)" class="inputText" [(ngModel)]="row.name" required>
+                    <span *ngIf="(info.name.length> 0)&& (!info.edit)">{{info.name}}</span>
+                </td>
+                <td>
+                    <i class="right fa fa-trash" (click)="deleteEmployeeInfo(info, i+1)" title='Delete'></i>
+                    <i class="right fa fa-edit" (click)="editEmployeeInfo(info, i+1)" title='Edit'></i>
+                    <i class="right fa fa-save" (click)="(withoutSave) ? saveEmployeeInfo(i+1, row.username, row.phone, row.role, row.name) : ''" title='Save'></i>
+                </td>
+                <div class="none" *ngIf="(!info.edit) && (info.information.length>0)">
+                    {{info.information}}
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>
+<app-comment [employees]="employees" (emitEmployee)="emitEmployee($event)"></app-comment>

@@ -1,0 +1,66 @@
+.employeeDiv {
+    width: 70%;
+    margin: auto;
+}
+
+.employeeDiv table {
+    width: 100%;
+    border: 1px solid dodgerblue;
+}
+
+caption {
+    padding: 7px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: table-caption;
+}
+
+tbody tr:first-child {
+    background: dodgerblue;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+table tr {
+    position: relative;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+table tr>div.none {
+    display: none;
+}
+
+table tr:hover div.none {
+    display: block;
+    font-size: 18px;
+    position: absolute;
+    border: 1px solid #ccc;
+    left: 60%;
+    background: #1E90FF;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 3px;
+    max-width: 200px;
+}
+
+.inputText {
+    width: 95%;
+    height: 30px;
+    border: none;
+    text-indent: 10px;
+}
+
+td i {
+    margin: 10px;
+}
